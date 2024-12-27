@@ -1,0 +1,8 @@
+def isSorted(n: int,  a: [int]) -> int:
+    # Write your code here.
+    f=1
+    for i in range(1,n) :
+        if a[i] < a[i-1]:
+           return 0
+    return f   
+    pass
