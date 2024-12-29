@@ -1,0 +1,15 @@
+def leftRotate(arr, k):
+    n = len(arr)
+    k = k % n  # Handle cases where k > n
+    rotated = [0] * n
+
+    for i in range(n):
+        rotated[i] = arr[(i + k) % n]
+
+    return rotated
+
+# Example usage
+array = [1, 2, 3, 4, 5]
+k = 2
+print(leftRotate(array, k))  # Output: [3, 4, 5, 1, 2]
+
