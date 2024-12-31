@@ -1,0 +1,16 @@
+def findMaxConsecutiveOnes(nums):
+    max_count = 0
+    count = 0
+
+    for num in nums:
+        if num == 1:
+            count += 1
+            max_count = max(max_count, count)
+        else:
+            count = 0  # Reset count when a 0 is encountered
+
+    return max_count
+
+# Example usage
+array = [1, 1, 0, 1, 1, 1]
+print(findMaxConsecutiveOnes(array))  # Output: 3
