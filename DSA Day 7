@@ -1,0 +1,9 @@
+def missingNumber(nums):
+    n = len(nums) + 1  # Including the missing number
+    total_sum = n * (n + 1) // 2  # Sum of first n natural numbers
+    actual_sum = sum(nums)  # Sum of array elements
+    return total_sum - actual_sum
+
+# Example usage
+array = [1, 2, 4, 5, 6]
+print(missingNumber(array))  # Output: 3
