@@ -1,0 +1,9 @@
+def singleNumber(nums):
+    result = 0
+    for num in nums:
+        result ^= num  # XOR operation
+    return result
+
+# Example usage
+array = [4, 1, 2, 1, 2]
+print(singleNumber(array))  # Output: 4
