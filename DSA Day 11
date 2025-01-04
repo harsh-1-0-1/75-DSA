@@ -1,0 +1,19 @@
+class Solution:
+    def swap(self, nums: list[int], i: int, j: int) -> None:
+        nums[i], nums[j] = nums[j], nums[i]
+
+    def sortColors(self, nums: list[int]) -> None:
+        index = 0
+        left = 0
+        right = len(nums) - 1
+
+        while index <= right:
+            if nums[index] == 0:
+                self.swap(nums, index, left)
+                index += 1
+                left += 1
+            elif nums[index] == 1:
+                index += 1
+            else:
+                self.swap(nums, index, right)
+                right -= 1
