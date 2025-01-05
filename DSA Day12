@@ -1,0 +1,18 @@
+def majorityElement(nums):
+    count = 0
+    candidate = None
+
+    # Phase 1: Find a candidate
+    for num in nums:
+        if count == 0:
+            candidate = num
+        count += 1 if num == candidate else -1
+
+    # Phase 2: Verify the candidate
+    if nums.count(candidate) > len(nums) // 2:
+        return candidate
+    return -1
+
+# Example usage
+array = [3, 3, 4, 2, 3, 3, 3]
+print(majorityElement(array))  # Output: 3
