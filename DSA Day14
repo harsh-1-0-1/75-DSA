@@ -1,0 +1,21 @@
+def maxProfit(prices):
+    left = 0  # Pointer for the day to buy
+    right = 1  # Pointer for the day to sell
+    max_profit = 0
+
+    while right < len(prices):
+        # If a profitable transaction is possible
+        if prices[right] > prices[left]:
+            profit = prices[right] - prices[left]
+            max_profit = max(max_profit, profit)
+        else:
+            # Move the buy pointer to the current sell pointer
+            left = right
+        # Move the sell pointer
+        right += 1
+
+    return max_profit
+
+# Example usage
+prices = [7, 1, 5, 3, 6, 4]
+print(maxProfit(prices))  # Output: 5 (Buy on day 2, sell on day 5)
